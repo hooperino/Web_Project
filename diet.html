@@ -3,31 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diet Recommendations</title>
+    <title>Diet Plans - Fitness Hub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="exercises.html">Exercises</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
     <header class="page-header diet-bg">
         <h1>Diet Plans</h1>
+        <p class="subtitle">Science-backed nutrition for your goals</p>
     </header>
 
     <section class="container">
-        <h2>Healthy Eating</h2>
-        <p>Choose the right diet for your fitness goals.</p>
+        <div class="diet-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="weight-loss">Weight Loss</button>
+            <button class="filter-btn" data-filter="muscle-gain">Muscle Gain</button>
+            <button class="filter-btn" data-filter="maintenance">Maintenance</button>
+        </div>
+
         <div class="grid">
-            <div class="card">
-                <h3>Weight Loss</h3>
-                <p>Low-calorie meal plans.</p>
+            <!-- Keto -->
+            <div class="card" data-level="weight-loss">
+                <img src="images/keto-diet.jpg" alt="Keto Diet" loading="lazy">
+                <h3>Keto Diet</h3>
+                <p>High-fat, low-carb plan for rapid fat burning</p>
+                <div class="diet-meta">
+                    <span class="calories">🔥 1200-1500 kcal/day</span>
+                    <span class="type">🥑 High-Fat</span>
+                </div>
+                <a href="#" class="btn">View Meal Plan</a>
             </div>
-            <div class="card">
-                <h3>Muscle Gain</h3>
-                <p>High-protein diet for strength training.</p>
+
+            <!-- Mediterranean -->
+            <div class="card" data-level="maintenance">
+                <img src="images/mediterranean-diet.jpg" alt="Mediterranean Diet" loading="lazy">
+                <h3>Mediterranean</h3>
+                <p>Heart-healthy fats and whole foods</p>
+                <div class="diet-meta">
+                    <span class="calories">🔥 1500-1800 kcal/day</span>
+                    <span class="type">🐟 Balanced</span>
+                </div>
+                <a href="#" class="btn">View Meal Plan</a>
             </div>
-            <div class="card">
-                <h3>Balanced Nutrition</h3>
-                <p>Overall health and wellness meals.</p>
+
+            <!-- High-Protein -->
+            <div class="card" data-level="muscle-gain">
+                <img src="images/high-protein-diet.jpg" alt="High-Protein Diet" loading="lazy">
+                <h3>High-Protein</h3>
+                <p>Build muscle with 1g protein per pound of bodyweight</p>
+                <div class="diet-meta">
+                    <span class="calories">🔥 2000-2500 kcal/day</span>
+                    <span class="type">🍗 Protein-Focused</span>
+                </div>
+                <a href="#" class="btn">View Meal Plan</a>
+            </div>
+
+            <!-- Intermittent Fasting -->
+            <div class="card" data-level="weight-loss">
+                <img src="images/intermittent-fasting.jpg" alt="Intermittent Fasting" loading="lazy">
+                <h3>Intermittent Fasting</h3>
+                <p>16:8 time-restricted eating window</p>
+                <div class="diet-meta">
+                    <span class="calories">⏱️ 14-16hr fasts</span>
+                    <span class="type">⏳ Time-Based</span>
+                </div>
+                <a href="#" class="btn">View Guide</a>
             </div>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2025 Fitness Hub. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Reuse the same filter script from exercises.html
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.card').forEach(card => {
+                    card.style.display = (filter === 'all' || card.dataset.level === filter) 
+                        ? 'block' 
+                        : 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

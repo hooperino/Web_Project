@@ -6,16 +6,6 @@
     <title>Home - Fitness Hub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<!-- Chatbot Container -->
-<div id="chat-container">
-    <div id="chat-header">Chat with FitnessBot</div>
-    <div id="chat-box"></div>
-    <input type="text" id="user-input" placeholder="Type a message...">
-    <button onclick="sendMessage()">Send</button>
-</div>
-
-<!-- Link to Chatbot Script -->
-<script src="js/chatbot.js"></script>
 <body>
     <header class="hero">
         <nav>
@@ -28,6 +18,7 @@
         </nav>
         <h1>Welcome to Fitness Hub</h1>
         <p>Your ultimate guide to a healthier life!</p>
+        <a href="exercises.html" class="hero-btn">Start Your Journey →</a>
     </header>
 
     <section class="container">
@@ -51,5 +42,25 @@
             </div>
         </div>
     </section>
+
+    <script>
+        (function (w, d, s, o, f, js, fjs) {
+          w["botsonic_widget"] = o;
+          w[o] =
+            w[o] ||
+            function () {
+              (w[o].q = w[o].q || []).push(arguments);
+            };
+          (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+          js.id = o;
+          js.src = f;
+          js.async = 1;
+          fjs.parentNode.insertBefore(js, fjs);
+        })(window, document, "script", "Botsonic", "https://widget.botsonic.com/CDN/botsonic.min.js");
+        Botsonic("init", {
+          serviceBaseUrl: "https://api-azure.botsonic.ai",
+          token: "09304857-e148-4e76-ac8f-e7d86b1b0176",
+        });
+    </script>
 </body>
 </html>
