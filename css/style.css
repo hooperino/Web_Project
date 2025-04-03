@@ -244,7 +244,8 @@ footer a:hover {
 }
 .signup-container {
     max-width: 400px;
-    margin: 50px auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 20px;
     background: #1e1e1e;
     color: #fff;
