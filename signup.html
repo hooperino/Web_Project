@@ -54,30 +54,47 @@
     <div class="signup-container">
         <h2>Sign Up for Access</h2>
         <form onsubmit="return validateForm()">
-            <label for="contact">Contact:</label>
-            <input type="text" id="contact" name="contact" required>
+            <div>
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" name="contact" required>
+            </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
 
-            <label for="confirm-password">Confirm Password:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
+            <div>
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
 
             <h3>Payment Details</h3>
-            <label for="card">Card Number:</label>
-            <input type="text" id="card" name="card" placeholder="1234 5678 9101 1121" required>
 
-            <label for="expiry">Expiry Date:</label>
-            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+            <div>
+                <label for="card">Card Number:</label>
+                <input type="text" id="card" name="card" placeholder="1234 5678 9101 1121" required>
+            </div>
 
-            <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            <div>
+                <label for="expiry">Expiry Date:</label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+            </div>
+
+            <div>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            </div>
 
             <button type="submit">Subscribe</button>
         </form>
