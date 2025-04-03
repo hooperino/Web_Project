@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function validateForm() {
+            let contact = document.getElementById("contact").value;
+            let email = document.getElementById("email").value;
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirm-password").value;
+
+            let contactRegex = /^[0-9]{10}$/;
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let usernameRegex = /^[a-zA-Z0-9_]{5,15}$/;
+            let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+            if (!contactRegex.test(contact)) {
+                alert("Invalid contact number! Must be 10 digits.");
+                return false;
+            }
+            if (!emailRegex.test(email)) {
+                alert("Invalid email format!");
+                return false;
+            }
+            if (!usernameRegex.test(username)) {
+                alert("Username must be 5-15 characters, letters, numbers, or underscores.");
+                return false;
+            }
+            if (!passwordRegex.test(password)) {
+                alert("Password must be at least 8 characters and contain both letters and numbers.");
+                return false;
+            }
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up for Access</h2>
+        <form onsubmit="return validateForm()">
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <h3>Payment Details</h3>
+            <label for="card">Card Number:</label>
+            <input type="text" id="card" name="card" placeholder="1234 5678 9101 1121" required>
+
+            <label for="expiry">Expiry Date:</label>
+            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</body>
+</html>
